@@ -23,6 +23,7 @@ public class CommandInterpreter implements Runnable {
         this.currentUser = new User("", in, out);
         this.data.register(currentUser);
     }
+    
     @Override
     public void run(){
         output.println("Hello!");
@@ -37,6 +38,7 @@ public class CommandInterpreter implements Runnable {
             } catch(NoSuchElementException e){                //if client goes through an unexpected exit, reader won't be able to read next line
                 exit = this.interpretCommand(":quit");        //and it throws NoSuchElementException. If :quit command is not executed after such exit,
             }                                                 //User associated with the CommandInterpreter will stay unwantedly in the DataBase.
+        }
     }
     
     public boolean interpretCommand(String input) {
