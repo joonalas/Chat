@@ -27,7 +27,7 @@ public class CommandInterpreter implements Runnable {
     
     @Override
     public void run(){
-        output.println("Hellö!");
+        output.println("Hello!");
         //clears input from any protocol dependant mess (telnet).
         //reader.nextLine();
 		
