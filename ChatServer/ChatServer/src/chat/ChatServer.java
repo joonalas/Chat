@@ -1,6 +1,7 @@
 package chat;
 
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.net.*;
 import java.io.PrintStream;
 
@@ -35,7 +36,7 @@ public class ChatServer {
 				* CommandInterpreter is launched in a new Thread so new connections can be made to ServerSocket.
 				*/
                 Socket socket = mainSocket.accept();
-                CommandInterpreter ci = new CommandInterpreter(socket.getInputStream(), new PrintStream(socket.getOutputStream(), true), data);
+                CommandInterpreter ci = new CommandInterpreter(socket.getInputStream(), new PrintStream(socket.getOutputStream(), true, "UTF-8"), data);
                 Thread chatThread = new Thread(ci);
                 chatThread.start();
                 

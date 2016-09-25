@@ -2,6 +2,7 @@ package chat;
 
 import java.util.Scanner;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.NoSuchElementException;
 
 public class CommandInterpreter implements Runnable {
@@ -15,8 +16,8 @@ public class CommandInterpreter implements Runnable {
     private final DataBase data;
     private final User currentUser;
 
-    public CommandInterpreter(InputStream in, PrintStream out, DataBase database) {
-        this.reader = new Scanner(in);
+    public CommandInterpreter(InputStream in, PrintStream out, DataBase database) throws UnsupportedEncodingException {
+        this.reader = new Scanner(new InputStreamReader(in, "UTF-8"));
         this.output = out;
         this.data = database;
 		/*see the User class*/

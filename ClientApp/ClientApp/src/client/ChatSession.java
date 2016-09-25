@@ -1,13 +1,17 @@
 package client;
 
-import java.io.IOException;
+//import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 
 
 public class ChatSession implements Runnable{
@@ -16,11 +20,11 @@ public class ChatSession implements Runnable{
     private final Scanner reader;
     private final PrintWriter outToServer;
     
-    public ChatSession(InputStream in, OutputStream out,Socket socket){
+    public ChatSession(InputStream in, OutputStream out,Socket socket) throws UnsupportedEncodingException{
         this.listener = new MessageListener(in);
         this.listenDaemon = new Thread(this.listener);
-        this.reader = new Scanner(System.in);
-        this.outToServer = new PrintWriter(out, true);
+        this.reader = new Scanner(System.in, "ISO8859_1");
+        this.outToServer = new PrintWriter(new OutputStreamWriter(out, "UTF-8"), true);
     }
     
     @Override
