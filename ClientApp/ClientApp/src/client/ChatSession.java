@@ -17,7 +17,7 @@ public class ChatSession implements Runnable{
     private final Scanner reader;
     private final PrintWriter outToServer;
     
-    public ChatSession(InputStream in, OutputStream out,Socket socket) throws UnsupportedEncodingException{
+    public ChatSession(InputStream in, OutputStream out) throws UnsupportedEncodingException{
         this.listener = new MessageListener(in);
         this.listenDaemon = new Thread(this.listener);
         this.reader = new Scanner(System.in, "ISO8859_1");

@@ -15,7 +15,7 @@ public class Client{
         InetAddress address = InetAddress.getByAddress(addressBytes);
 		
         Socket clientSocket = new Socket(address, 52828);
-        ChatSession chat = new ChatSession(clientSocket.getInputStream(), clientSocket.getOutputStream(), clientSocket);
+        ChatSession chat = new ChatSession(clientSocket.getInputStream(), clientSocket.getOutputStream());
         chat.run();
     }
     
