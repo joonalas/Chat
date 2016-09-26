@@ -11,7 +11,7 @@ public class Client{
     
     public void connect() throws IOException{
         //byte[] addressBytes = {(byte)(87), (byte)(95), (byte)(52), (byte)(167)};
-        byte[] addressBytes = {(byte)(192), (byte)(168), (byte)(8), (byte)(105)};
+        byte[] addressBytes = {(byte)(10), (byte)(112), (byte)(213), (byte)(83)};
         InetAddress address = InetAddress.getByAddress(addressBytes);
 		
         Socket clientSocket = new Socket(address, 52828);

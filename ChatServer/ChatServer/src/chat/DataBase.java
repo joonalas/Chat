@@ -1,25 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package chat;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- *
- * @author Joonas
- */
+
 public class DataBase implements Observable{
     private final ArrayList<Message> chatHistory;
     private final Set<Observer> observers;
     private String currentObserver;
-    private static DataBase instance = null;
+    private static volatile DataBase instance = null;
     
-    protected DataBase() {
+    private DataBase() {
         this.chatHistory = new ArrayList<>();
         this.observers = new HashSet();
         this.currentObserver = "";
@@ -27,7 +19,11 @@ public class DataBase implements Observable{
     
     public static DataBase getInstance(){
         if(instance == null) {
-            instance = new DataBase();
+            synchronized(DataBase.class) {
+                if(instance == null) {
+                    instance = new DataBase();
+                }
+            }
         } 
         return instance;
     }

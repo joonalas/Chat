@@ -2,7 +2,6 @@ package chat;
 
 import java.util.Scanner;
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.NoSuchElementException;
 
 public class CommandInterpreter implements Runnable {
