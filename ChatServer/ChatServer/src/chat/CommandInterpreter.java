@@ -20,7 +20,7 @@ public class CommandInterpreter implements Runnable {
         this.output = out;
         this.data = database;
 		/*see the User class*/
-        this.currentUser = new User("", in, out);
+        this.currentUser = new User("", out);
         this.data.register(currentUser);
     }
     

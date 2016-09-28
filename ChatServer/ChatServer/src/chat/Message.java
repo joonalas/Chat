@@ -14,6 +14,7 @@ public class Message {
         this.text = text;
         this.user = user;
         
+		/*Timestamp creation*/
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
         long time = date.getTime();
@@ -25,6 +26,7 @@ public class Message {
     }
     
     @Override
+	/*Messages are in form Username@dd-MM-yyyy hh:mm:ss: message text*/
     public String toString() {
         return String.format("%s@%s: %s", this.user.getName(), this.ts.toString(), this.text);
     }

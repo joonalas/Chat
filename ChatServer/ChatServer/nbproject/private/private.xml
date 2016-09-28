@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Joonas.Joonas.000/Documents/GitHub/Chat/ChatServer/ChatServer/src/chat/ChatServer.java</file>
+            <file>file:/C:/Users/Joonas.Joonas.000/Documents/GitHub/Chat/ChatServer/ChatServer/src/chat/User.java</file>
             <file>file:/C:/Users/Joonas.Joonas.000/Documents/GitHub/Chat/ChatServer/ChatServer/src/chat/CommandInterpreter.java</file>
             <file>file:/C:/Users/Joonas.Joonas.000/Documents/GitHub/Chat/ChatServer/ChatServer/src/chat/DataBase.java</file>
-            <file>file:/C:/Users/Joonas.Joonas.000/Documents/GitHub/Chat/ChatServer/ChatServer/src/chat/Message.java</file>
+            <file>file:/C:/Users/Joonas.Joonas.000/Documents/GitHub/Chat/ChatServer/ChatServer/src/chat/Main.java</file>
         </group>
     </open-files>
 </project-private>

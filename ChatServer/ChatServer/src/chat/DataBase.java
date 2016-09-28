@@ -4,17 +4,19 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
+/*DataBase is for reserving and serving the chat data, like
+* current observers, messages history, etc.
+*/
 
 public class DataBase implements Observable{
     private final ArrayList<Message> chatHistory;
     private final Set<Observer> observers;
-    private String currentObserver;
     private static volatile DataBase instance = null;
     
+	/*DataBase implements singleton pattern*/
     private DataBase() {
         this.chatHistory = new ArrayList<>();
         this.observers = new HashSet();
-        this.currentObserver = "";
     }
     
     public static DataBase getInstance(){
@@ -38,15 +40,6 @@ public class DataBase implements Observable{
 
     public Set<Observer> getObservers() {
         return this.observers;
-    }
-    
-
-    public void setCurrentObserver(String currentObserver) {
-        this.currentObserver = currentObserver;
-    }
-
-    public String getCurrentObserver() {
-        return this.currentObserver;
     }
 
     @Override
