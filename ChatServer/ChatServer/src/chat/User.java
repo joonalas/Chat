@@ -1,3 +1,9 @@
+/*Lassila Joonas 1402909
+* Hölttä Niko 1503558
+* Ly Hoang 1504238
+*/
+
+
 package chat;
 
 import java.io.PrintStream;
